@@ -5,9 +5,11 @@ import 'package:flutter_school_app/register.dart';
 import 'user_data.dart';
 
 class Login extends StatelessWidget {
+  const Login({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: LoginForm(),
       ),
@@ -16,6 +18,8 @@ class Login extends StatelessWidget {
 }
 
 class LoginForm extends StatefulWidget {
+  const LoginForm({super.key});
+
   @override
   _LoginFormState createState() => _LoginFormState();
 }
@@ -35,12 +39,12 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(30.0),
+      padding: const EdgeInsets.all(30.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: EdgeInsets.only(bottom: 20.0), // Add margin to separate logo from other content
+            margin: const EdgeInsets.only(bottom: 20.0), // Add margin to separate logo from other content
             child: Image.asset(
               'assets/logo1.png', //image file
               width: 500, // Adjust the width of the logo
@@ -48,8 +52,8 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 20.0), // Add margin to separate logo from other content
-            child: Text(
+            margin: const EdgeInsets.only(bottom: 20.0), // Add margin to separate logo from other content
+            child: const Text(
               'Sign In',
               style: TextStyle(
                 color: Colors.black, // Text color
@@ -64,14 +68,14 @@ class _LoginFormState extends State<LoginForm> {
             ),
             child: TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'School Email',
                 border: InputBorder.none, // Remove default border
                 contentPadding: EdgeInsets.all(10.0), // Adjust padding
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           Container(
             decoration: BoxDecoration(
                 border: Border.all(
@@ -83,18 +87,18 @@ class _LoginFormState extends State<LoginForm> {
             child: TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Password',
                 border: InputBorder.none, // Remove default border
                 contentPadding: EdgeInsets.all(10.0), // Adjust padding
               ),
             ),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
           ElevatedButton(
             style: ButtonStyle(
               padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                EdgeInsets.symmetric(horizontal: 75, vertical: 10),
+                const EdgeInsets.symmetric(horizontal: 75, vertical: 10),
               ),
               backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 1, 87, 155)),
             ),
@@ -145,16 +149,16 @@ class _LoginFormState extends State<LoginForm> {
                 );
               }
             },
-            child: Text(
+            child: const Text(
               'Sign In',
               style: TextStyle(fontSize: 16, color: Colors.white), // Adjust font size here
             ),
           ),
-          SizedBox(height: 10.0), // Add spacing between the Login and Register buttons
+          const SizedBox(height: 10.0), // Add spacing between the Login and Register buttons
           ElevatedButton(
             style: ButtonStyle(
               padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                EdgeInsets.symmetric(horizontal: 40, vertical: 10), // Adjust size here
+                const EdgeInsets.symmetric(horizontal: 40, vertical: 10), // Adjust size here
               ),
               backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 1, 87, 155)),
             ),
@@ -166,7 +170,7 @@ class _LoginFormState extends State<LoginForm> {
                 ),
               );
             },
-            child: Text(
+            child: const Text(
               'Register Account',
               style: TextStyle(fontSize: 16, color: Colors.white), // Adjust font size here
             ),
