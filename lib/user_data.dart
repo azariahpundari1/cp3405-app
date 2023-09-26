@@ -12,4 +12,4 @@ class User {
   });
 }
 
-List<User> registeredUsers = [User(name: 'Daniel', email: 'test@gmail.com', inviteCode: '42069', password: 'admin')];
+List<User> registeredUsers = [User(name: 'Daniel', email: 'student', inviteCode: '0', password: 'admin'), User(name: 'Bob', email: 'teacher', inviteCode: '1', password: 'admin')];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_school_app/home.dart';
+import 'package:flutter_school_app/NavViewPage.dart';
+import 'package:flutter_school_app/Student/NavViewPageStudent.dart';
 import 'package:flutter_school_app/register.dart';
 import 'user_data.dart';
 
@@ -105,24 +106,36 @@ class _LoginFormState extends State<LoginForm> {
               // Print registered users in debug consol
               print('registeredUsers:');
               for (User user in registeredUsers) {
-                print('name: ${user.name}, Email: ${user.email}');
+                print('name: ${user.name}, Email: ${user.email}, Password: ${user.password}');
               }
-
               // Check if the entered credentials match the master credentials
+              bool isTeacher = false;
               bool isUserFound = false;
               for (User user in registeredUsers) {
                 if (user.email == email && user.password == password) {
                   isUserFound = true;
+                  if (user.inviteCode == '1') {
+                    isTeacher = true;
+                  }
                   break;
                 }
               }
               if (isUserFound) {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => home(),
-                  ),
-                );
+                if (isTeacher) {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavViewPage(),
+                    ),
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => NavViewPageStudent(),
+                    ),
+                  );
+                }
               } else {
                 // Show an error message for incorrect credentials
                 ScaffoldMessenger.of(context).showSnackBar(
