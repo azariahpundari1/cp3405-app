@@ -23,6 +23,11 @@ class _HomePageStudentState extends State<HomePageStudent> {
   };
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
