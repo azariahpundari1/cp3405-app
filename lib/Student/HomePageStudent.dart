@@ -43,7 +43,9 @@ class _HomePageStudentState extends State<HomePageStudent> {
                 });
               },
             ),
-            const SizedBox(height: 20),
+            const SizedBox(
+              height: 20,
+            ),
             Text(
                 'Selected Segment: ${segmentText[_selectedSegment]}'), // Display the selected text
           ],
