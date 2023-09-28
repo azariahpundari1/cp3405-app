@@ -15,8 +15,6 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
     'Chemistry',
   ];
 
-  String selectedSubject = ''; // To store the selected subject
-
   @override
   Widget build(BuildContext context) {
     final customColor = Color.fromARGB(255, 1, 87, 155);
@@ -32,21 +30,33 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        selectedSubject = subjects[index];
-                      });
+                  child: GestureDetector(
+                    onTap: () {
+                      // Navigate to the subject's page when the button is tapped
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SubjectDetailPage(
+                            subjectName: subjects[index],
+                          ),
+                        ),
+                      );
                     },
-                    style: ElevatedButton.styleFrom(
-                      primary: customColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0), // Adjust the radius as needed (255, 1, 87, 155)
+                    child: ElevatedButton(
+                      onPressed: null, // Disabled the button's onPressed
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all(customColor),
+                        minimumSize: MaterialStateProperty.all(Size(150, 75)),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                        ),
                       ),
-                      minimumSize: Size(150, 75),
-                    ),
-                    child: Text(
-                      subjects[index], style: TextStyle(fontSize: 16, color: Colors.white), // Adjust font size here
+                      child: Text(
+                        subjects[index],
+                        style: TextStyle(fontSize: 16, color: Colors.white),
+                      ),
                     ),
                   ),
                 );
@@ -54,6 +64,27 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class SubjectDetailPage extends StatelessWidget {
+  final String subjectName;
+
+  SubjectDetailPage({required this.subjectName});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(subjectName),
+      ),
+      body: Center(
+        child: Text(
+          'Details for $subjectName go here.',
+          style: TextStyle(fontSize: 18),
+        ),
       ),
     );
   }

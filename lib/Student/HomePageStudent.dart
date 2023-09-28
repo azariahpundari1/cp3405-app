@@ -13,15 +13,6 @@ class HomePageStudent extends StatefulWidget {
 }
 
 class _HomePageStudentState extends State<HomePageStudent> {
-  int _selectedSegment = 0;
-
-  // Create a map to associate segment values with their text labels
-  final Map<int, String> segmentText = {
-    0: 'Yesterday',
-    1: 'Today',
-    2: 'Tomorrow',
-  };
-
   @override
   void initState() {
     super.initState();
@@ -37,19 +28,6 @@ class _HomePageStudentState extends State<HomePageStudent> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            CupertinoSegmentedControl<int>(
-              children: {
-                0: const Text('Yesterday'),
-                1: const Text('Today'),
-                2: const Text('Tomorrow'),
-              },
-              groupValue: _selectedSegment,
-              onValueChanged: (value) {
-                setState(() {
-                  _selectedSegment = value;
-                });
-              },
-            ),
             const SizedBox(height: 20),
 
             // second column
@@ -73,14 +51,16 @@ class _HomePageStudentState extends State<HomePageStudent> {
   _DataSource _getDataSource() {
     final List<Appointment> appointments = <Appointment>[];
     appointments.add(Appointment(
-      startTime: DateTime.now().add(const Duration(hours: -2)),
-      endTime: DateTime.now().add(const Duration(hours: -1)),
+      startTime: DateTime.parse('2023-09-27 08:00:04Z'),
+      // startTime: DateTime.now().add(const Duration(hours: -2)),
+      // endTime: DateTime.now().add(const Duration(hours: -1)),
+      endTime: DateTime.parse('2023-09-27 09:55:04Z'),
       subject: 'Science',
       color: Colors.red,
     ));
     appointments.add(Appointment(
-      startTime: DateTime.now().add(Duration(hours: 2)),
-      endTime: DateTime.now().add(Duration(hours: 1)),
+      startTime: DateTime.parse('2023-09-27 10:00:04Z'),
+      endTime: DateTime.parse('2023-09-27 11:55:04Z'),
       subject: 'Math',
       color: Color(0xFFf527318),
     ));
