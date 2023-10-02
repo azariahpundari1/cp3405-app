@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_school_app/Student/MathsPageStudent.dart';
+import 'package:flutter_school_app/Student/SciencePageStudent.dart';
 
 class SubjectPageStudent extends StatefulWidget {
   @override
@@ -20,7 +22,9 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
     final customColor = Color.fromARGB(255, 1, 87, 155);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Subjects'),
+        title: Text('My Subjects'),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: Column(
         children: [
@@ -32,15 +36,26 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
                   padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                   child: GestureDetector(
                     onTap: () {
-                      // Navigate to the subject's page when the button is tapped
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SubjectDetailPage(
-                            subjectName: subjects[index],
-                          ),
-                        ),
-                      );
+                      // Navigate to the corresponding subject's page when the button is tapped
+                      switch (subjects[index]) {
+                        case 'Maths':
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => MathsPageStudent(),
+                            ),
+                          );
+                          break;
+                        case 'Science':
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SciencePageStudent(),
+                            ),
+                          );
+                          break;
+                        // Add cases for other subjects here
+                      }
                     },
                     child: ElevatedButton(
                       onPressed: null, // Disabled the button's onPressed
@@ -64,27 +79,6 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SubjectDetailPage extends StatelessWidget {
-  final String subjectName;
-
-  SubjectDetailPage({required this.subjectName});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(subjectName),
-      ),
-      body: Center(
-        child: Text(
-          'Details for $subjectName go here.',
-          style: TextStyle(fontSize: 18),
-        ),
       ),
     );
   }

@@ -4,6 +4,10 @@ import 'SubjectPageStudent.dart'; // Import your Subjects page
 import 'SettingPageStudent.dart'; // Import your Settings page
 
 class NavViewPageStudent extends StatefulWidget {
+  final int initialPage; // Add the initialPage parameter
+
+  NavViewPageStudent({required this.initialPage});
+
   @override
   _NavViewPageState createState() => _NavViewPageState();
 }
@@ -23,12 +27,15 @@ class _NavViewPageState extends State<NavViewPageStudent> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
+
         onPageChanged: (index) {
+          false;
           setState(() {
             _currentPage = index;
           });
         },
-        children: pages, // Use the pages list
+        children: pages,
+        // Use the pages list
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentPage,
