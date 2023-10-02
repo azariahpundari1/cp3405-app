@@ -72,9 +72,13 @@ class SubjectsButtons extends StatelessWidget {
         if (label == 'Classroom Apps') {
           destinationPage = AppsPageStudent();
         } else if (label == 'My Rewards') {
-          destinationPage = RewardsPageStudent();
+          destinationPage = RewardsPageStudent(
+            userPoints: 100,
+          );
         } else if (label == 'Announcements') {
-          destinationPage = RewardsPageStudent();
+          destinationPage = RewardsPageStudent(
+            userPoints: 0,
+          );
         }
 
         return Padding(

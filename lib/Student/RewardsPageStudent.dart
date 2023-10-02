@@ -2,12 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_school_app/Student/NavViewPageStudent.dart';
 
 class RewardsPageStudent extends StatelessWidget {
+  final int userPoints; // User points
+
+  // Constructor to receive user points
+  RewardsPageStudent({required this.userPoints});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Rewards'),
-        centerTitle: true,
+        actions: [
+          // Display user points in the app bar
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Icon(Icons.star, color: Colors.yellow),
+                SizedBox(width: 4.0),
+                Text(
+                  '$userPoints Points',
+                  style: TextStyle(fontSize: 18.0),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
       body: ListView(
         padding: EdgeInsets.all(16.0),
@@ -23,24 +43,14 @@ class RewardsPageStudent extends StatelessWidget {
               ),
               _buildPointItem(
                 description: 'Earned 5 points for submitting homework on 2023-09-14',
-                points: 5,
+                points: 10,
               ),
               _buildPointItem(
-                description: 'Deducted 5 Points for minor app infraction 2023-09-13 f',
+                description: 'Deducted 5 Points for minor app infraction 2023-09-13',
                 points: -5,
               ),
               // Add more recent point items here
             ],
-          ),
-          // Button to go to the rewards shop
-          SizedBox(height: 16.0),
-          ElevatedButton(
-            style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color.fromARGB(255, 1, 87, 155))),
-            onPressed: () {},
-            child: Text(
-              'Go to Rewards Shop',
-              style: TextStyle(color: Colors.white),
-            ),
           ),
           // List of ways to earn points
           SizedBox(height: 8.0), // Reduce the height
@@ -70,11 +80,11 @@ class RewardsPageStudent extends StatelessWidget {
             borderColor: Colors.red, // Red border for minus points
             children: [
               _buildPointItem(
-                description: '1. Minor App infrigments',
+                description: '1. Minor App infringements',
                 points: -5,
               ),
               _buildPointItem(
-                description: '2. Major App infrigments',
+                description: '2. Major App infringements',
                 points: -10,
               ),
               _buildPointItem(
@@ -89,6 +99,13 @@ class RewardsPageStudent extends StatelessWidget {
             ],
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Handle the action for the "Go to Rewards Shop" button
+        },
+        backgroundColor: Color.fromARGB(255, 1, 87, 155),
+        child: Icon(Icons.shop, color: Colors.white),
       ),
       bottomNavigationBar: BottomNavigationBar(
         // Add your navigation bar items here

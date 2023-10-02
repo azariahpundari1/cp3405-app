@@ -17,12 +17,13 @@ class register extends StatelessWidget {
   }
 }
 
-void registerUser(String name, String email, String inviteCode, String password) {
+void registerUser(String name, String email, String inviteCode, String password, double points) {
   User newUser = User(
     name: name,
     email: email,
     inviteCode: inviteCode,
     password: password,
+    points: points,
   );
   registeredUsers.add(newUser);
 }
@@ -38,6 +39,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
   final TextEditingController _inviteCodeController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
+
+  double get points => 0;
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +159,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
             // Validate input and perform registration
             if (password == confirmPassword) {
               // Passwords match, proceed with registration
-              registerUser(name, email, inviteCode, password);
+              registerUser(name, email, inviteCode, password, points);
 
               //clear form field
               _nameController.clear();
