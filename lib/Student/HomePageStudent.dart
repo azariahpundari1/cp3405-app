@@ -31,7 +31,9 @@ class _HomePageStudentState extends State<HomePageStudent> {
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         actions: [
           IconButton(
-            icon: Icon(Icons.logout), // Logout button
+            icon: Icon(Icons.logout),
+            padding: EdgeInsets.only(bottom: 5), // Logout button
+            iconSize: 28,
             onPressed: () {
               _showLogoutConfirmationDialog(context);
               // Add your logout button action here
@@ -39,8 +41,8 @@ class _HomePageStudentState extends State<HomePageStudent> {
           ),
           IconButton(
             icon: Icon(Icons.account_circle),
-            iconSize: 45,
-            padding: EdgeInsets.all(5),
+            iconSize: 50,
+            padding: EdgeInsets.only(right: 15, bottom: 6),
             // Profile button
             onPressed: () {
               // Add your profile button action here
@@ -56,7 +58,7 @@ class _HomePageStudentState extends State<HomePageStudent> {
             Column(
               children: [
                 Text(
-                  'Welcome back \n student Name', // Combine both texts
+                  'Welcome back \n"student Name"', // Combine both texts
                   style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 40), // Increased the height of SizedBox
@@ -94,25 +96,25 @@ class _HomePageStudentState extends State<HomePageStudent> {
       ),
       Appointment(
         startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 10, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 0), // 1:00 AM of the next day
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 11, 0), // 1:00 AM of the next day
         subject: 'Math',
         color: const Color(0xFFf527318),
       ),
       Appointment(
         startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0), // 1:00 AM of the next day
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 13, 0), // 1:00 AM of the next day
         subject: 'English',
         color: const Color(0xFFfb21f66),
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 0), // 8:00 AM
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 13, 0), // 8:00 AM
         endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0),
         subject: 'History',
         color: const Color(0xFFf3282b8),
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0),
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 15, 0),
         subject: 'Physics',
         color: const Color(0xFFf2a7886),
       ),

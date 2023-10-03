@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_school_app/Student/AnnouncementsPageStudent.dart';
-import 'package:flutter_school_app/Student/AppsPageStudent.dart';
-import 'package:flutter_school_app/Student/RewardsPageStudent.dart';
-import 'NavViewPageStudent.dart';
+import 'package:flutter_school_app/AnnouncementsPage.dart';
+import 'package:flutter_school_app/AppsPage.dart';
+import 'package:flutter_school_app/RewardsPage.dart';
+import 'package:flutter_school_app/StudentsPage.dart';
+import 'NavViewPage.dart';
 
-class MathsPageStudent extends StatelessWidget {
+class MathsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final customColor = const Color.fromARGB(255, 1, 87, 155); // Custom color
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Maths 10A'),
+        title: const Text('Maths'),
         centerTitle: true,
         actions: const [
           // Add any actions you want in the app bar
@@ -23,7 +24,7 @@ class MathsPageStudent extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text(
-              'Welcome to Year 10 Maths',
+              'Maths Year 10 - 10A',
               style: TextStyle(
                 fontSize: 24.0,
                 fontWeight: FontWeight.bold,
@@ -54,7 +55,7 @@ class MathsPageStudent extends StatelessWidget {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => NavViewPageStudent(initialPage: index),
+              builder: (context) => NavViewPage(initialPage: index),
             ),
           );
         },
@@ -71,19 +72,21 @@ class SubjectsButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> buttonLabels = ['Classroom Apps', 'My Rewards', 'Announcements'];
+    final List<String> buttonLabels = ['Students', 'Apps', 'Rewards', 'Announcements'];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: buttonLabels.map((label) {
         Widget destinationPage = Container();
 
-        if (label == 'Classroom Apps') {
-          destinationPage = AppsPageStudent();
-        } else if (label == 'My Rewards') {
-          destinationPage = RewardsPageStudent(userPoints: 100);
+        if (label == 'Students') {
+          destinationPage = StudentsPage();
+        } else if (label == 'Apps') {
+          destinationPage = AppsPage();
+        } else if (label == 'Rewards') {
+          destinationPage = RewardsPage();
         } else if (label == 'Announcements') {
-          destinationPage = AnnouncementsPageStudents();
+          destinationPage = AnnouncementsPage();
         }
 
         return Padding(

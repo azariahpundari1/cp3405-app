@@ -12,13 +12,14 @@ class RewardsPageStudent extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('My Rewards'),
+        backgroundColor: Colors.white,
         actions: [
           // Display user points in the app bar
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(right: 20),
             child: Row(
               children: [
-                Icon(Icons.star, color: Colors.yellow),
+                Icon(Icons.stars, color: Colors.yellow[600]),
                 SizedBox(width: 4.0),
                 Text(
                   '$userPoints Points',
@@ -75,9 +76,11 @@ class RewardsPageStudent extends StatelessWidget {
           ),
           // List of ways to lose points
           SizedBox(height: 8.0), // Reduce the height
+
           _buildSection(
             title: 'Ways to Lose Points',
             borderColor: Colors.red, // Red border for minus points
+
             children: [
               _buildPointItem(
                 description: '1. Minor App infringements',
@@ -104,8 +107,11 @@ class RewardsPageStudent extends StatelessWidget {
         onPressed: () {
           // Handle the action for the "Go to Rewards Shop" button
         },
-        backgroundColor: Color.fromARGB(255, 1, 87, 155),
-        child: Icon(Icons.shop, color: Colors.white),
+        backgroundColor: Colors.yellow[600],
+        child: Icon(
+          Icons.shopping_cart,
+          color: Colors.white,
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         // Add your navigation bar items here
@@ -150,6 +156,7 @@ class RewardsPageStudent extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: borderColor, width: 2.0),
         borderRadius: BorderRadius.circular(8.0),
+        color: Colors.blue[50]?.withOpacity(0.5),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

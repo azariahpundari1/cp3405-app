@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'HomePage.dart'; // Import your HomeScreen page
-import 'SubjectPage.dart'; // Import your Subjects page
-import 'SettingPage.dart'; // Import your Settings page
+import 'package:flutter_school_app/HomePage.dart';
+import 'package:flutter_school_app/SettingPage.dart';
+import 'package:flutter_school_app/SubjectPage.dart';
 
 class NavViewPage extends StatefulWidget {
+  final int initialPage; // Add the initialPage parameter
+
+  NavViewPage({required this.initialPage});
+
   @override
   _NavViewPageState createState() => _NavViewPageState();
 }
@@ -23,12 +27,15 @@ class _NavViewPageState extends State<NavViewPage> {
     return Scaffold(
       body: PageView(
         controller: _pageController,
+
         onPageChanged: (index) {
+          false;
           setState(() {
             _currentPage = index;
           });
         },
-        children: pages, // Use the pages list
+        children: pages,
+        // Use the pages list
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentPage,
