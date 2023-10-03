@@ -25,6 +25,7 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+  // TODO #11 fix toggle dark theme.
   bool _isDarkModeEnabled = false;
   String _appVersion = ''; // Add this line
 
