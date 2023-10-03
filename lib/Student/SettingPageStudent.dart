@@ -5,10 +5,10 @@ class SettingsPageStudent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Screen'),
+        title: Text('Settings'),
       ),
       body: Center(
-        child: Text('Home Screen Content'),
+        child: Text('Settings still in development'),
       ),
     );
   }

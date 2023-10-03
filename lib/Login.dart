@@ -125,14 +125,18 @@ class _LoginFormState extends State<LoginForm> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NavViewPage(),
+                      builder: (context) => NavViewPage(
+                        initialPage: 0,
+                      ),
                     ),
                   );
                 } else {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => NavViewPageStudent(),
+                      builder: (context) => NavViewPageStudent(
+                        initialPage: 0,
+                      ),
                     ),
                   );
                 }
