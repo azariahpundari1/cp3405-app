@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
+Future<String> getAppVersion() async {
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  return packageInfo.version;
+}
+
 class SettingsPageStudent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -21,6 +26,20 @@ class SettingsPage extends StatefulWidget {
 
 class _SettingsPageState extends State<SettingsPage> {
   bool _isDarkModeEnabled = false;
+  String _appVersion = ''; // Add this line
+
+  @override
+  void initState() {
+    super.initState();
+    _loadAppVersion(); // Load the app version when the widget is initialized
+  }
+
+  _loadAppVersion() async {
+    final appVersion = await getAppVersion();
+    setState(() {
+      _appVersion = appVersion;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +67,11 @@ class _SettingsPageState extends State<SettingsPage> {
                 initialValue: _isDarkModeEnabled,
                 leading: const Icon(Icons.format_paint),
                 title: const Text('Enable Dark Mode'),
+              ),
+              SettingsTile(
+                leading: const Icon(Icons.info),
+                title: const Text('App Version'),
+                trailing: Text(_appVersion),
               ),
             ],
           ),
