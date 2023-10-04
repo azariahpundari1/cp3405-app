@@ -8,11 +8,11 @@ Flutter is an open-source UI software development kit created by Google. It is u
 
 # System Requirements 
 ## Windows
-- **Operating Systems:** Windows 10 or later (64-bit), x86-64 based.
-- **Disk Space:** 1.64 GB (does not include disk space for IDE/tools).
-- **Tools:** Flutter depends on these tools being available in your environment.
-  -[Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.3) 5.0 or newer (this is pre-installed with Windows 10)
-  -[Git for Windows](https://git-scm.com/download/win) 2.x, with the Use Git from the Windows Command Prompt option.
+* **Operating Systems:** Windows 10 or later (64-bit), x86-64 based.
+* **Disk Space:** 1.64 GB (does not include disk space for IDE/tools).
+* **Tools:** Flutter depends on these tools being available in your environment.
+  * [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.3) 5.0 or newer (this is pre-installed with Windows 10)
+  * [Git for Windows](https://git-scm.com/download/win) 2.x, with the Use Git from the Windows Command Prompt option.
 
 # Flutter - Getting Started
 In order to get started on this project, Flutter must be installed. Here's a step by step process on setting up the Flutter SDK:
