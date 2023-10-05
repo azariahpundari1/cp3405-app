@@ -18,3 +18,14 @@ Flutter is an open-source UI software development kit created by Google. It is u
 In order to get started on this project, Flutter must be installed. Here's a step by step process on setting up the Flutter SDK:
 
 1. 
+## MacOS
+* https://docs.flutter.dev/get-started/install/macos
+
+## Windows
+* https://docs.flutter.dev/get-started/install/windows
+
+## Linux
+* Seek help from a higher power
+
+## Chromebook
+* Throw your chromebook off a cliff and get windows or mac
