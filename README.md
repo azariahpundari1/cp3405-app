@@ -14,6 +14,11 @@ Flutter is an open-source UI software development kit created by Google. It is u
   * [Windows PowerShell](https://learn.microsoft.com/en-us/powershell/scripting/windows-powershell/install/installing-windows-powershell?view=powershell-7.3) 5.0 or newer (this is pre-installed with Windows 10)
   * [Git for Windows](https://git-scm.com/download/win) 2.x, with the Use Git from the Windows Command Prompt option.
 
+## MacOS
+* Operating Systems: macOS, version 10.14 (Mojave) or later.
+* Disk Space: 2.8 GB (does not include disk space for IDE/tools).
+* **Tools:** Flutter uses git for installation and upgrade. We recommend installing Xcode, which includes git, but you can also install git separately.
+
 # Flutter - Getting Started
 In order to get started on this project, Flutter must be installed. Here's a step by step process on setting up the Flutter SDK:
 
