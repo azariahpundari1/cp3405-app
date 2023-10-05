@@ -15,8 +15,8 @@ Flutter is an open-source UI software development kit created by Google. It is u
   * [Git for Windows](https://git-scm.com/download/win) 2.x, with the Use Git from the Windows Command Prompt option.
 
 ## MacOS
-* Operating Systems: macOS, version 10.14 (Mojave) or later.
-* Disk Space: 2.8 GB (does not include disk space for IDE/tools).
+* **Operating Systems:** macOS, version 10.14 (Mojave) or later.
+* **Disk Space:** 2.8 GB (does not include disk space for IDE/tools).
 * **Tools:** Flutter uses git for installation and upgrade. We recommend installing Xcode, which includes git, but you can also install git separately.
 
 # Flutter - Getting Started
