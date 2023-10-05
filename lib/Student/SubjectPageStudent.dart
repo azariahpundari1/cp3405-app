@@ -19,12 +19,12 @@ class _SubjectsPageState extends State<SubjectPageStudent> {
 
   // Define a list of colors for each subject
   final List<Color> subjectColors = [
-    const Color(0xFFf527318).withOpacity(0.8), // Maths
-    Colors.red.withOpacity(0.8), // Science
-    const Color(0xFFf3282b8).withOpacity(0.8), // History
-    const Color(0xFFfb21f66).withOpacity(0.8), // English
-    const Color(0xfff2a7886).withOpacity(0.8), // Physics
-    Colors.lightBlueAccent.withOpacity(0.8), // Chemistry
+    const Color(0xFFf527318), // Maths
+    Colors.red, // Science
+    const Color(0xFFf3282b8), // History
+    const Color(0xFFfb21f66), // English
+    const Color(0xfff2a7886), // Physics
+    Colors.lightBlueAccent, // Chemistry
   ];
 
   @override

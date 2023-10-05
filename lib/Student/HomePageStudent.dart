@@ -18,8 +18,7 @@ class _HomePageStudentState extends State<HomePageStudent> {
     super.initState();
     _calendarController = CalendarController();
     _calendarController.view = CalendarView.schedule;
-    _calendarController.selectedDate =
-        DateTime.now(); // Set selected date to the current date
+    _calendarController.selectedDate = DateTime.now(); // Set selected date to the current date
   }
 
   @override
@@ -90,53 +89,43 @@ class _HomePageStudentState extends State<HomePageStudent> {
   _DataSource _getDataSource() {
     final List<Appointment> appointments = <Appointment>[
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 8, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 10, 0), // 10:00 AM
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 8, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 10, 0), // 10:00 AM
         subject: 'Science',
         color: Colors.red,
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 10, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 11, 0), // 1:00 AM of the next day
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 10, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 11, 0), // 1:00 AM of the next day
         subject: 'Math',
         color: const Color(0xFFf527318),
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 12, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 13, 0), // 1:00 AM of the next day
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 13, 0), // 1:00 AM of the next day
         subject: 'English',
         color: const Color(0xFFfb21f66),
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 13, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 14, 0),
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 13, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0),
         subject: 'History',
         color: const Color(0xFFf3282b8),
       ),
       Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 14, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 15, 0),
+        startTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 14, 0), // 8:00 AM
+        endTime: DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day, 15, 0),
         subject: 'Physics',
         color: const Color(0xFFf2a7886),
       ),
-      Appointment(
-        startTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 12, 0), // 8:00 AM
-        endTime: DateTime(DateTime.now().year, DateTime.now().month,
-            DateTime.now().day, 14, 0),
-        subject: 'Chemistry',
-        color: Colors.lightBlueAccent,
-      ),
+      // Appointment(
+      //   startTime: DateTime(DateTime.now().year, DateTime.now().month,
+      //       DateTime.now().day, 12, 0), // 8:00 AM
+      //   endTime: DateTime(DateTime.now().year, DateTime.now().month,
+      //       DateTime.now().day, 14, 0),
+      //   subject: 'Chemistry',
+      //   color: Colors.lightBlueAccent,
+      // ),
     ];
     return _DataSource(appointments);
   }
