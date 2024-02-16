@@ -28,9 +28,3 @@ In order to get started on this project, Flutter must be installed. Here's a ste
 
 ## Windows
 * https://docs.flutter.dev/get-started/install/windows
-
-## Linux
-* Seek help from a higher power
-
-## Chromebook
-* Throw your chromebook off a cliff and get windows or mac
